@@ -5,9 +5,7 @@
 
 <section>
     <div class="container">
-        <nav>
-            <span><a href="{{ route('comics.index') }}">Fumetti</a></span>
-        </nav>
+        <h1>Content</h1>
      </div>
 </section>
 
