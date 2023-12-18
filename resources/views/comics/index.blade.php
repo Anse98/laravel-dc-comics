@@ -40,6 +40,10 @@
                   @endforelse
                 </tbody>
               </table>
+
+              <div class="d-flex justify-content-center">
+                <span class="btn btn-primary"><a href="{{ route('comics.create') }}" class="text-decoration-none text-light">Aggiungi Fumetto</a></span>
+              </div>
         </div>
     </section>
 @endsection
