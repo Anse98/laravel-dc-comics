@@ -48,7 +48,7 @@
                                         {{-- Pulsante elimina --}}
                                         <input type="submit" value="Elimina" class="btn btn-danger">
                                       </form>
-                                      <span class="btn btn-primary" onclick="hideModal()">Annulla</span>
+                                      <span class="btn btn-primary" onclick="hideModal('{{ $comic->id }}')">Annulla</span>
                                     </div>
                                 </div>
                               </div>
@@ -84,6 +84,7 @@ function deleteNotification(comicId) {
 
 function hideModal(comicId) {
     const deleteMenu = document.getElementById('modal-delete-' + comicId);
+
     deleteMenu.classList.remove('d-block');
 }
 
