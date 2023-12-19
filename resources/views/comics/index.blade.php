@@ -13,6 +13,7 @@
                     <th>Serie</th>
                     <th>Data di vendita</th>
                     <th>Tipo</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -30,8 +31,20 @@
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
-                        <td>
-                          <span><a href="{{route('comics.edit', $comic->id)}}">Modifica</a></span>
+                        <td class="">
+                          <div class="d-flex gap-3">
+
+                            {{-- Pulsante modifica --}}
+                            <span><a href="{{route('comics.edit', $comic->id)}}" class="btn btn-primary">Modifica</a></span>
+
+                            {{-- Pulsante elimina --}}
+                          <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <input type="submit" value="Elimina" class="btn btn-danger">
+                          </form>
+                          </div>
                         </td>
                       </tr>
                   @empty
