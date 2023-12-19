@@ -20,7 +20,7 @@
                       <tr>
                         <td>{{ $comic->id }}</td>
                         <td>
-                            <a href="{{ route('comics.show',$comic) }}">{{$comic->title}}
+                            <a href="{{ route('comics.show', $comic->id) }}">{{$comic->title}}
                             </a>   
                         </td>
                         <td>
@@ -30,11 +30,14 @@
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
+                        <td>
+                          <span><a href="{{route('comics.edit', $comic->id)}}">Modifica</a></span>
+                        </td>
                       </tr>
                   @empty
                       <tr>
                         <td colspan="8">
-                          Nessuna pasta trovata
+                          Nessun fumetto trovato
                         </td>
                       </tr>
                   @endforelse
